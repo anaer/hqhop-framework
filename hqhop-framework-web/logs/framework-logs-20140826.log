@@ -1,0 +1,603 @@
+14:17:52,757  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-config.xml]
+14:17:53,454  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-config-common.xml]
+14:17:53,500  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-config-shiro.xml]
+14:17:53,614  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-config-cache.xml]
+14:17:53,708  INFO GenericApplicationContext:513 - Refreshing org.springframework.context.support.GenericApplicationContext@6522d847: startup date [Tue Aug 26 14:17:53 CST 2014]; root of context hierarchy
+14:17:54,124  INFO PropertySourcesPlaceholderConfigurer:172 - Loading properties file from class path resource [resources.properties]
+14:17:54,371  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'org.springframework.cache.annotation.AnnotationCacheOperationSource#0' of type [class org.springframework.cache.annotation.AnnotationCacheOperationSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:17:54,759  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'org.springframework.cache.config.internalCacheAdvisor' of type [class org.springframework.cache.interceptor.BeanFactoryCacheOperationSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:17:54,767  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0' of type [class org.springframework.transaction.annotation.AnnotationTransactionAttributeSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:17:54,780  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'org.springframework.transaction.config.internalTransactionAdvisor' of type [class org.springframework.transaction.interceptor.BeanFactoryTransactionAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:17:55,054  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'org.springframework.beans.factory.config.MethodInvokingFactoryBean#0' of type [class org.springframework.beans.factory.config.MethodInvokingFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:17:55,824  INFO DruidDataSource:642 - {dataSource-1} inited
+14:17:55,825  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'dataSource' of type [class com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:17:56,097  INFO DruidDataSource:1253 - {dataSource-1} closed
+14:17:56,100 ERROR TestContextManager:329 - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@4c89512] to prepare test instance [com.hqhop.framework.UserServiceTest@cb2d332]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:101)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:109)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:75)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:326)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:212)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:232)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:89)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:71)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:175)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'shiroFilter' defined in class path resource [spring-config-shiro.xml]: Cannot resolve reference to bean 'securityManager' while setting bean property 'securityManager'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'securityManager' defined in class path resource [spring-config-shiro.xml]: Cannot resolve reference to bean 'userRealm' while setting bean property 'realm'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userRealm': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.hqhop.framework.shiro.service.UserService org.apache.shiro.realm.UserRealm.userService; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userServiceImpl' defined in file [F:\J2EEWorkspace\hqhop-framework-parent\hqhop-framework-shiro\target\classes\com\hqhop\framework\shiro\service\impl\UserServiceImpl.class]: Invocation of init method failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userDaoImpl': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private org.hibernate.SessionFactory com.hqhop.framework.common.orm.hibernate.BaseRepoitoryImpl.sessionFactory; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory' defined in class path resource [spring-config.xml]: Invocation of init method failed; nested exception is java.lang.NoClassDefFoundError: org/jboss/logging/BasicLogger
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:328)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:107)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1456)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:232)
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:618)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:467)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:121)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:100)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:250)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContextInternal(CacheAwareContextLoaderDelegate.java:64)
+	at org.springframework.test.context.CacheAwareContextLoaderDelegate.loadContext(CacheAwareContextLoaderDelegate.java:91)
+	... 25 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'securityManager' defined in class path resource [spring-config-shiro.xml]: Cannot resolve reference to bean 'userRealm' while setting bean property 'realm'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userRealm': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.hqhop.framework.shiro.service.UserService org.apache.shiro.realm.UserRealm.userService; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userServiceImpl' defined in file [F:\J2EEWorkspace\hqhop-framework-parent\hqhop-framework-shiro\target\classes\com\hqhop\framework\shiro\service\impl\UserServiceImpl.class]: Invocation of init method failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userDaoImpl': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private org.hibernate.SessionFactory com.hqhop.framework.common.orm.hibernate.BaseRepoitoryImpl.sessionFactory; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory' defined in class path resource [spring-config.xml]: Invocation of init method failed; nested exception is java.lang.NoClassDefFoundError: org/jboss/logging/BasicLogger
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:328)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:107)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1456)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:320)
+	... 43 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userRealm': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.hqhop.framework.shiro.service.UserService org.apache.shiro.realm.UserRealm.userService; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userServiceImpl' defined in file [F:\J2EEWorkspace\hqhop-framework-parent\hqhop-framework-shiro\target\classes\com\hqhop\framework\shiro\service\impl\UserServiceImpl.class]: Invocation of init method failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userDaoImpl': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private org.hibernate.SessionFactory com.hqhop.framework.common.orm.hibernate.BaseRepoitoryImpl.sessionFactory; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory' defined in class path resource [spring-config.xml]: Invocation of init method failed; nested exception is java.lang.NoClassDefFoundError: org/jboss/logging/BasicLogger
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:292)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:320)
+	... 53 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.hqhop.framework.shiro.service.UserService org.apache.shiro.realm.UserRealm.userService; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userServiceImpl' defined in file [F:\J2EEWorkspace\hqhop-framework-parent\hqhop-framework-shiro\target\classes\com\hqhop\framework\shiro\service\impl\UserServiceImpl.class]: Invocation of init method failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userDaoImpl': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private org.hibernate.SessionFactory com.hqhop.framework.common.orm.hibernate.BaseRepoitoryImpl.sessionFactory; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory' defined in class path resource [spring-config.xml]: Invocation of init method failed; nested exception is java.lang.NoClassDefFoundError: org/jboss/logging/BasicLogger
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:508)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:289)
+	... 61 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userServiceImpl' defined in file [F:\J2EEWorkspace\hqhop-framework-parent\hqhop-framework-shiro\target\classes\com\hqhop\framework\shiro\service\impl\UserServiceImpl.class]: Invocation of init method failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userDaoImpl': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private org.hibernate.SessionFactory com.hqhop.framework.common.orm.hibernate.BaseRepoitoryImpl.sessionFactory; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory' defined in class path resource [spring-config.xml]: Invocation of init method failed; nested exception is java.lang.NoClassDefFoundError: org/jboss/logging/BasicLogger
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:957)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:855)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:480)
+	... 63 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userDaoImpl': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private org.hibernate.SessionFactory com.hqhop.framework.common.orm.hibernate.BaseRepoitoryImpl.sessionFactory; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory' defined in class path resource [spring-config.xml]: Invocation of init method failed; nested exception is java.lang.NoClassDefFoundError: org/jboss/logging/BasicLogger
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:292)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBean(DefaultListableBeanFactory.java:295)
+	at com.hqhop.framework.common.utils.SpringUtils.getBean(SpringUtils.java:40)
+	at com.hqhop.framework.common.service.BaseServiceImpl.afterPropertiesSet(BaseServiceImpl.java:37)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1612)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	... 73 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private org.hibernate.SessionFactory com.hqhop.framework.common.orm.hibernate.BaseRepoitoryImpl.sessionFactory; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory' defined in class path resource [spring-config.xml]: Invocation of init method failed; nested exception is java.lang.NoClassDefFoundError: org/jboss/logging/BasicLogger
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:508)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:289)
+	... 85 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory' defined in class path resource [spring-config.xml]: Invocation of init method failed; nested exception is java.lang.NoClassDefFoundError: org/jboss/logging/BasicLogger
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1014)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:957)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:855)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:480)
+	... 87 more
+Caused by: java.lang.NoClassDefFoundError: org/jboss/logging/BasicLogger
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:792)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:449)
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:71)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:361)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at org.hibernate.cfg.Configuration.<clinit>(Configuration.java:192)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.afterPropertiesSet(LocalSessionFactoryBean.java:320)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1612)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	... 97 more
+Caused by: java.lang.ClassNotFoundException: org.jboss.logging.BasicLogger
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 113 more
+14:34:36,787  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-config.xml]
+14:34:38,238  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-config-common.xml]
+14:34:38,291  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-config-shiro.xml]
+14:34:38,369  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-config-cache.xml]
+14:34:38,477  INFO GenericApplicationContext:513 - Refreshing org.springframework.context.support.GenericApplicationContext@52a55130: startup date [Tue Aug 26 14:34:38 CST 2014]; root of context hierarchy
+14:34:38,883  INFO PropertySourcesPlaceholderConfigurer:172 - Loading properties file from class path resource [resources.properties]
+14:34:39,154  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'org.springframework.cache.annotation.AnnotationCacheOperationSource#0' of type [class org.springframework.cache.annotation.AnnotationCacheOperationSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:34:39,399  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'org.springframework.cache.config.internalCacheAdvisor' of type [class org.springframework.cache.interceptor.BeanFactoryCacheOperationSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:34:39,407  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0' of type [class org.springframework.transaction.annotation.AnnotationTransactionAttributeSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:34:39,416  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'org.springframework.transaction.config.internalTransactionAdvisor' of type [class org.springframework.transaction.interceptor.BeanFactoryTransactionAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:34:39,626  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'org.springframework.beans.factory.config.MethodInvokingFactoryBean#0' of type [class org.springframework.beans.factory.config.MethodInvokingFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:34:40,365  INFO DruidDataSource:642 - {dataSource-1} inited
+14:34:40,366  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'dataSource' of type [class com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:34:40,778  INFO Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+14:34:40,792  INFO Version:54 - HHH000412: Hibernate Core {4.3.5.Final}
+14:34:40,797  INFO Environment:239 - HHH000206: hibernate.properties not found
+14:34:40,801  INFO Environment:346 - HHH000021: Bytecode provider name : javassist
+14:34:41,032  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+14:34:41,282  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+14:34:41,293  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+14:34:41,359  WARN UUIDHexGenerator:59 - HHH000409: Using org.hibernate.id.UUIDHexGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead
+14:34:41,703  INFO SchemaUpdate:182 - HHH000228: Running hbm2ddl schema update
+14:34:41,704  INFO SchemaUpdate:193 - HHH000102: Fetching database metadata
+14:34:41,712  INFO SchemaUpdate:205 - HHH000396: Updating schema
+14:34:41,786  INFO TableMetadata:66 - HHH000261: Table found: hqhop_framework.t_base_attachement
+14:34:41,787  INFO TableMetadata:67 - HHH000037: Columns: [id, source_id, create_time, filename, creater, url]
+14:34:41,788  INFO TableMetadata:69 - HHH000108: Foreign keys: [fk_8ntp3nl71p6cqwvtstcl2bur1]
+14:34:41,789  INFO TableMetadata:70 - HHH000126: Indexes: [fk_8ntp3nl71p6cqwvtstcl2bur1, primary]
+14:34:41,828  INFO TableMetadata:66 - HHH000261: Table found: hqhop_framework.t_base_department
+14:34:41,830  INFO TableMetadata:67 - HHH000037: Columns: [id, icon, weight, name, parent_id]
+14:34:41,831  INFO TableMetadata:69 - HHH000108: Foreign keys: []
+14:34:41,831  INFO TableMetadata:70 - HHH000126: Indexes: [primary]
+14:34:41,850  INFO TableMetadata:66 - HHH000261: Table found: hqhop_framework.t_base_user
+14:34:41,851  INFO TableMetadata:67 - HHH000037: Columns: [id, sex, status, department_id, name, age, identitycard, phonenum, password, empnum, deleted]
+14:34:41,862  INFO TableMetadata:69 - HHH000108: Foreign keys: [fk_ibghm56qmu0v606w343apy2in]
+14:34:41,863  INFO TableMetadata:70 - HHH000126: Indexes: [primary, fk_ibghm56qmu0v606w343apy2in]
+14:34:41,878  INFO TableMetadata:66 - HHH000261: Table found: hqhop_framework.t_synergism_task
+14:34:41,879  INFO TableMetadata:67 - HHH000037: Columns: [content, id, create_date, status, subject, user_id]
+14:34:41,880  INFO TableMetadata:69 - HHH000108: Foreign keys: [fk_dk8ab4rf92t1qjtsc5moagafc]
+14:34:41,882  INFO TableMetadata:70 - HHH000126: Indexes: [primary, fk_dk8ab4rf92t1qjtsc5moagafc]
+14:34:41,915  INFO TableMetadata:66 - HHH000261: Table found: hqhop_framework.t_synergism_task_detail
+14:34:41,917  INFO TableMetadata:67 - HHH000037: Columns: [content, id, task_id, user_id, date_time]
+14:34:41,918  INFO TableMetadata:69 - HHH000108: Foreign keys: [fk_l6b3v22xqo449p1vn2a8nf4nl, fk_l2xhj7wpl6a7u2yg9p0g4e7vc]
+14:34:41,919  INFO TableMetadata:70 - HHH000126: Indexes: [fk_l6b3v22xqo449p1vn2a8nf4nl, fk_l2xhj7wpl6a7u2yg9p0g4e7vc, primary]
+14:34:41,953  INFO TableMetadata:66 - HHH000261: Table found: hqhop_framework.t_synergism_task_user
+14:34:41,955  INFO TableMetadata:67 - HHH000037: Columns: [id, status, task, task_id, complete_time, user_id, user]
+14:34:41,956  INFO TableMetadata:69 - HHH000108: Foreign keys: []
+14:34:41,958  INFO TableMetadata:70 - HHH000126: Indexes: [primary]
+14:34:41,960  INFO SchemaUpdate:242 - HHH000232: Schema update complete
+14:34:41,982  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'sessionFactory' of type [class org.springframework.orm.hibernate4.LocalSessionFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:34:42,020  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'sessionFactory' of type [class org.hibernate.internal.SessionFactoryImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:34:42,355  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'sqlContext' of type [class com.hqhop.framework.common.orm.sql.SQLContext] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:34:42,359  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'userDaoImpl' of type [class com.hqhop.framework.shiro.dao.impl.UserDaoImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:34:42,443  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'userServiceImpl' of type [class com.hqhop.framework.shiro.service.impl.UserServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:34:42,472  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'org.springframework.transaction.interceptor.TransactionInterceptor#0' of type [class org.springframework.transaction.interceptor.TransactionInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:34:42,652  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'userRealm' of type [class org.apache.shiro.realm.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:34:42,764  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'rememberMeCookie' of type [class org.apache.shiro.web.servlet.SimpleCookie] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:34:42,773  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'rememberMeManager' of type [class org.apache.shiro.web.mgt.CookieRememberMeManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:34:42,781  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'securityManager' of type [class org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:34:42,816  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'formAuthenticationFilter' of type [class org.apache.shiro.web.filter.authc.FormAuthenticationFilter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:34:42,852  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'sysUserFilter' of type [class org.apache.shiro.web.filter.SysUserFilter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:34:42,858  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'util:map#16230e2f' of type [class org.springframework.beans.factory.config.MapFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:34:42,866  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'util:map#16230e2f' of type [class java.util.LinkedHashMap] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:34:44,528  WARN XMemcachedClient:727 - XMemcachedClient use Text protocol
+14:34:44,617  INFO SelectorManager:37 - Creating 4 reactors...
+14:34:44,644  WARN AbstractController:372 - The Controller started at localhost/127.0.0.1:0 ...
+14:34:44,678  WARN AbstractController:251 - Add a session: 127.0.0.1:11211
+14:34:44,767  INFO HibernateTransactionManager:341 - Using DataSource [{
+	CreateTime:"2014-08-26 14:34:39",
+	ActiveCount:0,
+	PoolingCount:10,
+	CreateCount:10,
+	DestroyCount:0,
+	CloseCount:2,
+	ConnectCount:2,
+	Connections:[
+		{ID:1236898123, ConnectTime:"2014-08-26 14:34:40", UseCount:0, LastActiveTime:"2014-08-26 14:34:40"},
+		{ID:905050301, ConnectTime:"2014-08-26 14:34:40", UseCount:0, LastActiveTime:"2014-08-26 14:34:40"},
+		{ID:553737206, ConnectTime:"2014-08-26 14:34:40", UseCount:0, LastActiveTime:"2014-08-26 14:34:40"},
+		{ID:1614578791, ConnectTime:"2014-08-26 14:34:40", UseCount:0, LastActiveTime:"2014-08-26 14:34:40"},
+		{ID:622376845, ConnectTime:"2014-08-26 14:34:40", UseCount:0, LastActiveTime:"2014-08-26 14:34:40"},
+		{ID:2042273025, ConnectTime:"2014-08-26 14:34:40", UseCount:0, LastActiveTime:"2014-08-26 14:34:40"},
+		{ID:1251601174, ConnectTime:"2014-08-26 14:34:40", UseCount:0, LastActiveTime:"2014-08-26 14:34:40"},
+		{ID:1058609053, ConnectTime:"2014-08-26 14:34:40", UseCount:0, LastActiveTime:"2014-08-26 14:34:40"},
+		{ID:140338376, ConnectTime:"2014-08-26 14:34:40", UseCount:0, LastActiveTime:"2014-08-26 14:34:40"},
+		{ID:730041026, ConnectTime:"2014-08-26 14:34:40", UseCount:2, LastActiveTime:"2014-08-26 14:34:41"}
+	]
+}
+
+[
+	{
+	ID:1236898123, 
+	poolStatements:[
+		]
+	},
+	{
+	ID:905050301, 
+	poolStatements:[
+		]
+	},
+	{
+	ID:553737206, 
+	poolStatements:[
+		]
+	},
+	{
+	ID:1614578791, 
+	poolStatements:[
+		]
+	},
+	{
+	ID:622376845, 
+	poolStatements:[
+		]
+	},
+	{
+	ID:2042273025, 
+	poolStatements:[
+		]
+	},
+	{
+	ID:1251601174, 
+	poolStatements:[
+		]
+	},
+	{
+	ID:1058609053, 
+	poolStatements:[
+		]
+	},
+	{
+	ID:140338376, 
+	poolStatements:[
+		]
+	},
+	{
+	ID:730041026, 
+	poolStatements:[
+		]
+	}
+]] of Hibernate SessionFactory for HibernateTransactionManager
+14:34:45,056 DEBUG SQL:109 - insert into t_base_user (age, deleted, name, password, sex, status, id) values (?, ?, ?, ?, ?, ?, ?)
+14:34:45,193  INFO GenericApplicationContext:873 - Closing org.springframework.context.support.GenericApplicationContext@52a55130: startup date [Tue Aug 26 14:34:38 CST 2014]; root of context hierarchy
+14:34:45,215  WARN AbstractController:365 - Remove a session: 127.0.0.1:11211
+14:34:45,228  INFO DruidDataSource:1253 - {dataSource-1} closed
+14:34:45,234  INFO AbstractController:478 - Controller has been stopped.
+15:52:57,089  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-config.xml]
+15:52:57,653  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-config-common.xml]
+15:52:57,684  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-config-shiro.xml]
+15:52:57,737  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-config-cache.xml]
+15:52:57,788  INFO GenericApplicationContext:513 - Refreshing org.springframework.context.support.GenericApplicationContext@52a55130: startup date [Tue Aug 26 15:52:57 CST 2014]; root of context hierarchy
+15:52:58,354  INFO PropertySourcesPlaceholderConfigurer:172 - Loading properties file from class path resource [resources.properties]
+15:52:58,674  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'org.springframework.cache.annotation.AnnotationCacheOperationSource#0' of type [class org.springframework.cache.annotation.AnnotationCacheOperationSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:52:59,059  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'org.springframework.cache.config.internalCacheAdvisor' of type [class org.springframework.cache.interceptor.BeanFactoryCacheOperationSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:52:59,066  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0' of type [class org.springframework.transaction.annotation.AnnotationTransactionAttributeSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:52:59,073  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'org.springframework.transaction.config.internalTransactionAdvisor' of type [class org.springframework.transaction.interceptor.BeanFactoryTransactionAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:52:59,269  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'org.springframework.beans.factory.config.MethodInvokingFactoryBean#0' of type [class org.springframework.beans.factory.config.MethodInvokingFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:52:59,971  INFO DruidDataSource:642 - {dataSource-1} inited
+15:52:59,972  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'dataSource' of type [class com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:53:00,338  INFO Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+15:53:00,350  INFO Version:54 - HHH000412: Hibernate Core {4.3.5.Final}
+15:53:00,354  INFO Environment:239 - HHH000206: hibernate.properties not found
+15:53:00,357  INFO Environment:346 - HHH000021: Bytecode provider name : javassist
+15:53:00,576  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+15:53:00,812  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+15:53:00,821  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+15:53:00,879  WARN UUIDHexGenerator:59 - HHH000409: Using org.hibernate.id.UUIDHexGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead
+15:53:01,246  INFO SchemaUpdate:182 - HHH000228: Running hbm2ddl schema update
+15:53:01,247  INFO SchemaUpdate:193 - HHH000102: Fetching database metadata
+15:53:01,279  INFO SchemaUpdate:205 - HHH000396: Updating schema
+15:53:01,315  INFO TableMetadata:66 - HHH000261: Table found: hqhop_framework.t_base_attachement
+15:53:01,316  INFO TableMetadata:67 - HHH000037: Columns: [id, source_id, create_time, filename, creater, url]
+15:53:01,317  INFO TableMetadata:69 - HHH000108: Foreign keys: [fk_8ntp3nl71p6cqwvtstcl2bur1]
+15:53:01,318  INFO TableMetadata:70 - HHH000126: Indexes: [fk_8ntp3nl71p6cqwvtstcl2bur1, primary]
+15:53:01,329  INFO TableMetadata:66 - HHH000261: Table found: hqhop_framework.t_base_department
+15:53:01,330  INFO TableMetadata:67 - HHH000037: Columns: [id, icon, weight, name, parent_id]
+15:53:01,331  INFO TableMetadata:69 - HHH000108: Foreign keys: []
+15:53:01,332  INFO TableMetadata:70 - HHH000126: Indexes: [primary]
+15:53:01,346  INFO TableMetadata:66 - HHH000261: Table found: hqhop_framework.t_base_user
+15:53:01,347  INFO TableMetadata:67 - HHH000037: Columns: [id, sex, status, department_id, name, age, identitycard, phonenum, password, empnum, deleted]
+15:53:01,348  INFO TableMetadata:69 - HHH000108: Foreign keys: [fk_ibghm56qmu0v606w343apy2in]
+15:53:01,349  INFO TableMetadata:70 - HHH000126: Indexes: [primary, fk_ibghm56qmu0v606w343apy2in]
+15:53:01,364  INFO TableMetadata:66 - HHH000261: Table found: hqhop_framework.t_synergism_task
+15:53:01,365  INFO TableMetadata:67 - HHH000037: Columns: [content, id, create_date, status, subject, user_id]
+15:53:01,367  INFO TableMetadata:69 - HHH000108: Foreign keys: [fk_dk8ab4rf92t1qjtsc5moagafc]
+15:53:01,368  INFO TableMetadata:70 - HHH000126: Indexes: [primary, fk_dk8ab4rf92t1qjtsc5moagafc]
+15:53:01,381  INFO TableMetadata:66 - HHH000261: Table found: hqhop_framework.t_synergism_task_detail
+15:53:01,383  INFO TableMetadata:67 - HHH000037: Columns: [content, id, task_id, user_id, date_time]
+15:53:01,384  INFO TableMetadata:69 - HHH000108: Foreign keys: [fk_l6b3v22xqo449p1vn2a8nf4nl, fk_l2xhj7wpl6a7u2yg9p0g4e7vc]
+15:53:01,385  INFO TableMetadata:70 - HHH000126: Indexes: [fk_l6b3v22xqo449p1vn2a8nf4nl, fk_l2xhj7wpl6a7u2yg9p0g4e7vc, primary]
+15:53:01,404  INFO TableMetadata:66 - HHH000261: Table found: hqhop_framework.t_synergism_task_user
+15:53:01,405  INFO TableMetadata:67 - HHH000037: Columns: [id, status, task, task_id, complete_time, user_id, user]
+15:53:01,406  INFO TableMetadata:69 - HHH000108: Foreign keys: []
+15:53:01,407  INFO TableMetadata:70 - HHH000126: Indexes: [primary]
+15:53:01,410  INFO SchemaUpdate:242 - HHH000232: Schema update complete
+15:53:01,422  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'sessionFactory' of type [class org.springframework.orm.hibernate4.LocalSessionFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:53:01,453  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'sessionFactory' of type [class org.hibernate.internal.SessionFactoryImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:53:01,833  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'sqlContext' of type [class com.hqhop.framework.common.orm.sql.SQLContext] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:53:01,837  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'userDaoImpl' of type [class com.hqhop.framework.shiro.dao.impl.UserDaoImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:53:02,003  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'userServiceImpl' of type [class com.hqhop.framework.shiro.service.impl.UserServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:53:02,032  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'org.springframework.transaction.interceptor.TransactionInterceptor#0' of type [class org.springframework.transaction.interceptor.TransactionInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:53:02,193  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'userRealm' of type [class org.apache.shiro.realm.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:53:02,371  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'rememberMeCookie' of type [class org.apache.shiro.web.servlet.SimpleCookie] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:53:02,379  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'rememberMeManager' of type [class org.apache.shiro.web.mgt.CookieRememberMeManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:53:02,386  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'securityManager' of type [class org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:53:02,464  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'formAuthenticationFilter' of type [class org.apache.shiro.web.filter.authc.FormAuthenticationFilter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:53:02,496  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'sysUserFilter' of type [class org.apache.shiro.web.filter.SysUserFilter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:53:02,585  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'util:map#57783b03' of type [class org.springframework.beans.factory.config.MapFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:53:02,589  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'util:map#57783b03' of type [class java.util.LinkedHashMap] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:53:04,137  WARN XMemcachedClient:727 - XMemcachedClient use Text protocol
+15:53:04,237  INFO SelectorManager:37 - Creating 4 reactors...
+15:53:04,265  WARN AbstractController:372 - The Controller started at localhost/127.0.0.1:0 ...
+15:53:04,345  WARN AbstractController:251 - Add a session: 127.0.0.1:11211
+15:53:04,510  INFO HibernateTransactionManager:341 - Using DataSource [{
+	CreateTime:"2014-08-26 15:52:59",
+	ActiveCount:0,
+	PoolingCount:10,
+	CreateCount:10,
+	DestroyCount:0,
+	CloseCount:2,
+	ConnectCount:2,
+	Connections:[
+		{ID:695183207, ConnectTime:"2014-08-26 15:52:59", UseCount:0, LastActiveTime:"2014-08-26 15:52:59"},
+		{ID:1633120369, ConnectTime:"2014-08-26 15:52:59", UseCount:0, LastActiveTime:"2014-08-26 15:52:59"},
+		{ID:865549476, ConnectTime:"2014-08-26 15:52:59", UseCount:0, LastActiveTime:"2014-08-26 15:52:59"},
+		{ID:235818354, ConnectTime:"2014-08-26 15:52:59", UseCount:0, LastActiveTime:"2014-08-26 15:52:59"},
+		{ID:1291746963, ConnectTime:"2014-08-26 15:52:59", UseCount:0, LastActiveTime:"2014-08-26 15:52:59"},
+		{ID:1479019618, ConnectTime:"2014-08-26 15:52:59", UseCount:0, LastActiveTime:"2014-08-26 15:52:59"},
+		{ID:759505701, ConnectTime:"2014-08-26 15:52:59", UseCount:0, LastActiveTime:"2014-08-26 15:52:59"},
+		{ID:369518939, ConnectTime:"2014-08-26 15:52:59", UseCount:0, LastActiveTime:"2014-08-26 15:52:59"},
+		{ID:2129584296, ConnectTime:"2014-08-26 15:52:59", UseCount:0, LastActiveTime:"2014-08-26 15:52:59"},
+		{ID:1960801970, ConnectTime:"2014-08-26 15:52:59", UseCount:2, LastActiveTime:"2014-08-26 15:53:01"}
+	]
+}
+
+[
+	{
+	ID:695183207, 
+	poolStatements:[
+		]
+	},
+	{
+	ID:1633120369, 
+	poolStatements:[
+		]
+	},
+	{
+	ID:865549476, 
+	poolStatements:[
+		]
+	},
+	{
+	ID:235818354, 
+	poolStatements:[
+		]
+	},
+	{
+	ID:1291746963, 
+	poolStatements:[
+		]
+	},
+	{
+	ID:1479019618, 
+	poolStatements:[
+		]
+	},
+	{
+	ID:759505701, 
+	poolStatements:[
+		]
+	},
+	{
+	ID:369518939, 
+	poolStatements:[
+		]
+	},
+	{
+	ID:2129584296, 
+	poolStatements:[
+		]
+	},
+	{
+	ID:1960801970, 
+	poolStatements:[
+		]
+	}
+]] of Hibernate SessionFactory for HibernateTransactionManager
+15:53:04,832 DEBUG SQL:109 - select * from t_base_user where id =?
+15:53:05,061  INFO GenericApplicationContext:873 - Closing org.springframework.context.support.GenericApplicationContext@52a55130: startup date [Tue Aug 26 15:52:57 CST 2014]; root of context hierarchy
+15:53:05,099  INFO DruidDataSource:1253 - {dataSource-1} closed
+15:53:05,103  WARN AbstractController:365 - Remove a session: 127.0.0.1:11211
+15:53:05,104  INFO AbstractController:478 - Controller has been stopped.
+15:53:47,709  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-config.xml]
+15:53:48,359  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-config-common.xml]
+15:53:48,403  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-config-shiro.xml]
+15:53:48,510  INFO XmlBeanDefinitionReader:316 - Loading XML bean definitions from class path resource [spring-config-cache.xml]
+15:53:48,624  INFO GenericApplicationContext:513 - Refreshing org.springframework.context.support.GenericApplicationContext@2b054ac8: startup date [Tue Aug 26 15:53:48 CST 2014]; root of context hierarchy
+15:53:49,057  INFO PropertySourcesPlaceholderConfigurer:172 - Loading properties file from class path resource [resources.properties]
+15:53:49,357  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'org.springframework.cache.annotation.AnnotationCacheOperationSource#0' of type [class org.springframework.cache.annotation.AnnotationCacheOperationSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:53:49,718  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'org.springframework.cache.config.internalCacheAdvisor' of type [class org.springframework.cache.interceptor.BeanFactoryCacheOperationSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:53:49,727  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0' of type [class org.springframework.transaction.annotation.AnnotationTransactionAttributeSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:53:49,735  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'org.springframework.transaction.config.internalTransactionAdvisor' of type [class org.springframework.transaction.interceptor.BeanFactoryTransactionAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:53:49,984  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'org.springframework.beans.factory.config.MethodInvokingFactoryBean#0' of type [class org.springframework.beans.factory.config.MethodInvokingFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:53:50,699  INFO DruidDataSource:642 - {dataSource-1} inited
+15:53:50,700  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'dataSource' of type [class com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:53:51,066  INFO Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+15:53:51,080  INFO Version:54 - HHH000412: Hibernate Core {4.3.5.Final}
+15:53:51,086  INFO Environment:239 - HHH000206: hibernate.properties not found
+15:53:51,090  INFO Environment:346 - HHH000021: Bytecode provider name : javassist
+15:53:51,340  INFO Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+15:53:51,589  INFO TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+15:53:51,601  INFO ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+15:53:51,669  WARN UUIDHexGenerator:59 - HHH000409: Using org.hibernate.id.UUIDHexGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead
+15:53:52,021  INFO SchemaUpdate:182 - HHH000228: Running hbm2ddl schema update
+15:53:52,023  INFO SchemaUpdate:193 - HHH000102: Fetching database metadata
+15:53:52,029  INFO SchemaUpdate:205 - HHH000396: Updating schema
+15:53:52,105  INFO TableMetadata:66 - HHH000261: Table found: hqhop_framework.t_base_attachement
+15:53:52,106  INFO TableMetadata:67 - HHH000037: Columns: [id, source_id, create_time, filename, creater, url]
+15:53:52,107  INFO TableMetadata:69 - HHH000108: Foreign keys: [fk_8ntp3nl71p6cqwvtstcl2bur1]
+15:53:52,108  INFO TableMetadata:70 - HHH000126: Indexes: [fk_8ntp3nl71p6cqwvtstcl2bur1, primary]
+15:53:52,121  INFO TableMetadata:66 - HHH000261: Table found: hqhop_framework.t_base_department
+15:53:52,123  INFO TableMetadata:67 - HHH000037: Columns: [id, icon, weight, name, parent_id]
+15:53:52,124  INFO TableMetadata:69 - HHH000108: Foreign keys: []
+15:53:52,125  INFO TableMetadata:70 - HHH000126: Indexes: [primary]
+15:53:52,142  INFO TableMetadata:66 - HHH000261: Table found: hqhop_framework.t_base_user
+15:53:52,143  INFO TableMetadata:67 - HHH000037: Columns: [id, sex, status, department_id, name, age, identitycard, phonenum, password, empnum, deleted]
+15:53:52,162  INFO TableMetadata:69 - HHH000108: Foreign keys: [fk_ibghm56qmu0v606w343apy2in]
+15:53:52,163  INFO TableMetadata:70 - HHH000126: Indexes: [primary, fk_ibghm56qmu0v606w343apy2in]
+15:53:52,180  INFO TableMetadata:66 - HHH000261: Table found: hqhop_framework.t_synergism_task
+15:53:52,181  INFO TableMetadata:67 - HHH000037: Columns: [content, id, create_date, status, subject, user_id]
+15:53:52,187  INFO TableMetadata:69 - HHH000108: Foreign keys: [fk_dk8ab4rf92t1qjtsc5moagafc]
+15:53:52,188  INFO TableMetadata:70 - HHH000126: Indexes: [primary, fk_dk8ab4rf92t1qjtsc5moagafc]
+15:53:52,204  INFO TableMetadata:66 - HHH000261: Table found: hqhop_framework.t_synergism_task_detail
+15:53:52,205  INFO TableMetadata:67 - HHH000037: Columns: [content, id, task_id, user_id, date_time]
+15:53:52,206  INFO TableMetadata:69 - HHH000108: Foreign keys: [fk_l6b3v22xqo449p1vn2a8nf4nl, fk_l2xhj7wpl6a7u2yg9p0g4e7vc]
+15:53:52,207  INFO TableMetadata:70 - HHH000126: Indexes: [fk_l6b3v22xqo449p1vn2a8nf4nl, fk_l2xhj7wpl6a7u2yg9p0g4e7vc, primary]
+15:53:52,229  INFO TableMetadata:66 - HHH000261: Table found: hqhop_framework.t_synergism_task_user
+15:53:52,230  INFO TableMetadata:67 - HHH000037: Columns: [id, status, task, task_id, complete_time, user_id, user]
+15:53:52,231  INFO TableMetadata:69 - HHH000108: Foreign keys: []
+15:53:52,232  INFO TableMetadata:70 - HHH000126: Indexes: [primary]
+15:53:52,234  INFO SchemaUpdate:242 - HHH000232: Schema update complete
+15:53:52,251  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'sessionFactory' of type [class org.springframework.orm.hibernate4.LocalSessionFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:53:52,289  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'sessionFactory' of type [class org.hibernate.internal.SessionFactoryImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:53:52,595  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'sqlContext' of type [class com.hqhop.framework.common.orm.sql.SQLContext] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:53:52,599  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'userDaoImpl' of type [class com.hqhop.framework.shiro.dao.impl.UserDaoImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:53:52,708  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'userServiceImpl' of type [class com.hqhop.framework.shiro.service.impl.UserServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:53:52,737  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'org.springframework.transaction.interceptor.TransactionInterceptor#0' of type [class org.springframework.transaction.interceptor.TransactionInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:53:52,914  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'userRealm' of type [class org.apache.shiro.realm.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:53:53,095  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'rememberMeCookie' of type [class org.apache.shiro.web.servlet.SimpleCookie] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:53:53,102  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'rememberMeManager' of type [class org.apache.shiro.web.mgt.CookieRememberMeManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:53:53,218  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'securityManager' of type [class org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:53:53,313  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'formAuthenticationFilter' of type [class org.apache.shiro.web.filter.authc.FormAuthenticationFilter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:53:53,344  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'sysUserFilter' of type [class org.apache.shiro.web.filter.SysUserFilter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:53:53,349  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'util:map#bbb058f' of type [class org.springframework.beans.factory.config.MapFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:53:53,353  INFO PostProcessorRegistrationDelegate$BeanPostProcessorChecker:309 - Bean 'util:map#bbb058f' of type [class java.util.LinkedHashMap] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:53:54,655  WARN XMemcachedClient:727 - XMemcachedClient use Text protocol
+15:53:54,726  INFO SelectorManager:37 - Creating 4 reactors...
+15:53:54,752  WARN AbstractController:372 - The Controller started at localhost/127.0.0.1:0 ...
+15:53:54,880  WARN AbstractController:251 - Add a session: 127.0.0.1:11211
+15:53:55,106  INFO HibernateTransactionManager:341 - Using DataSource [{
+	CreateTime:"2014-08-26 15:53:50",
+	ActiveCount:0,
+	PoolingCount:10,
+	CreateCount:10,
+	DestroyCount:0,
+	CloseCount:2,
+	ConnectCount:2,
+	Connections:[
+		{ID:1499644674, ConnectTime:"2014-08-26 15:53:50", UseCount:0, LastActiveTime:"2014-08-26 15:53:50"},
+		{ID:1659954726, ConnectTime:"2014-08-26 15:53:50", UseCount:0, LastActiveTime:"2014-08-26 15:53:50"},
+		{ID:899021705, ConnectTime:"2014-08-26 15:53:50", UseCount:0, LastActiveTime:"2014-08-26 15:53:50"},
+		{ID:162855643, ConnectTime:"2014-08-26 15:53:50", UseCount:0, LastActiveTime:"2014-08-26 15:53:50"},
+		{ID:1220625623, ConnectTime:"2014-08-26 15:53:50", UseCount:0, LastActiveTime:"2014-08-26 15:53:50"},
+		{ID:143565970, ConnectTime:"2014-08-26 15:53:50", UseCount:0, LastActiveTime:"2014-08-26 15:53:50"},
+		{ID:1289122209, ConnectTime:"2014-08-26 15:53:50", UseCount:0, LastActiveTime:"2014-08-26 15:53:50"},
+		{ID:314452080, ConnectTime:"2014-08-26 15:53:50", UseCount:0, LastActiveTime:"2014-08-26 15:53:50"},
+		{ID:38853293, ConnectTime:"2014-08-26 15:53:50", UseCount:0, LastActiveTime:"2014-08-26 15:53:50"},
+		{ID:172266763, ConnectTime:"2014-08-26 15:53:50", UseCount:2, LastActiveTime:"2014-08-26 15:53:52"}
+	]
+}
+
+[
+	{
+	ID:1499644674, 
+	poolStatements:[
+		]
+	},
+	{
+	ID:1659954726, 
+	poolStatements:[
+		]
+	},
+	{
+	ID:899021705, 
+	poolStatements:[
+		]
+	},
+	{
+	ID:162855643, 
+	poolStatements:[
+		]
+	},
+	{
+	ID:1220625623, 
+	poolStatements:[
+		]
+	},
+	{
+	ID:143565970, 
+	poolStatements:[
+		]
+	},
+	{
+	ID:1289122209, 
+	poolStatements:[
+		]
+	},
+	{
+	ID:314452080, 
+	poolStatements:[
+		]
+	},
+	{
+	ID:38853293, 
+	poolStatements:[
+		]
+	},
+	{
+	ID:172266763, 
+	poolStatements:[
+		]
+	}
+]] of Hibernate SessionFactory for HibernateTransactionManager
+15:53:55,358 DEBUG SQL:109 - select * from t_base_user where id =?
+15:53:55,535  INFO GenericApplicationContext:873 - Closing org.springframework.context.support.GenericApplicationContext@2b054ac8: startup date [Tue Aug 26 15:53:48 CST 2014]; root of context hierarchy
+15:53:55,599  WARN AbstractController:365 - Remove a session: 127.0.0.1:11211
+15:53:55,603  INFO DruidDataSource:1253 - {dataSource-1} closed
+15:53:55,606  INFO AbstractController:478 - Controller has been stopped.

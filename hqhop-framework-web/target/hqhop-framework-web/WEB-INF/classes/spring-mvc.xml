@@ -1,0 +1,47 @@
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context" xmlns:mvc="http://www.springframework.org/schema/mvc" xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+	<!-- <context:property-placeholder location="classpath:resources.properties" /> -->
+
+	<!-- 开启controller注解支持 -->
+	<context:component-scan base-package="com.hqhop.framework.*.controller" use-default-filters="false">
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+		<context:include-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice" />
+	</context:component-scan>
+
+
+	<!-- 会自动注册了 -->
+	<mvc:annotation-driven enable-matrix-variables="true">
+		<mvc:argument-resolvers>
+			<bean class="com.hqhop.framework.common.bind.method.CurrentUserMethodArgumentResolver" />
+		</mvc:argument-resolvers>
+	</mvc:annotation-driven>
+
+	<mvc:view-controller path="/" view-name="redirect:/index" />
+	<!-- 当在web.xml 中 DispatcherServlet使用 <url-pattern>/</url-pattern> 映射时，能映射静态资源 -->
+	<mvc:default-servlet-handler />
+	<!-- 静态资源映射 -->
+	<mvc:resources mapping="/static/**" location="/WEB-INF/static/" />
+
+
+	<!-- 拦截器设置 -->
+	<!-- <mvc:interceptors> -->
+	<!-- <bean class="org.springframework.web.servlet.handler.ConversionServiceExposingInterceptor"> -->
+	<!-- <constructor-arg ref="conversionService" /> -->
+	<!-- </bean> -->
+	<!-- </mvc:interceptors> -->
+
+	<!-- ========================= VIEW定义 ========================= -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
+		<property name="contentType" value="text/html" />
+		<property name="prefix" value="/WEB-INF/jsp/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+</beans>
