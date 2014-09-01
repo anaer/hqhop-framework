@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE sqls-configs PUBLIC "-//SQLS//MAIN CONFIG DTD//EN" "http://kf.hqhop.com:8888/hqhop-framework-sqls.dtd">
-<sqls-configs>
-	<update id="update">
-		update t_base_user set name='silentwu' where id=?
-	</update>
-	<import resource="classpath:sql/test1.xml" />
-</sqls-configs>

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE sqls-configs PUBLIC "-//SQLS//MAIN CONFIG DTD//EN" "http://kf.hqhop.com:8888/hqhop-framework-sqls.dtd">
-<sqls-configs>
-	<insert id="test1">
-		insert into t_base_user(name,age,deleted) values(?,?,?)
-	</insert>
-</sqls-configs>
